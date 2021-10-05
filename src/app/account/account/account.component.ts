@@ -19,7 +19,8 @@ export class AccountComponent {
 
   onSetTo(status: string) {
     this.accService.updateStatus(this.id, status);
-    this.logService.logStatusChange(status);
+    this.accService.statusUpdated.emit(status);
+    //this.logService.logStatusChange(status);
   }
 
   ngOnInit(): void {}
